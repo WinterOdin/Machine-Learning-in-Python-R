@@ -27,3 +27,10 @@ plt.scatter(X, y, color='red')
 plt.plot(X,lin_reg_2.predict(polyF.fit_transform(X)), color="blue")
 plt.title("Polynomial reg")
 plt.show()
+
+# predict new results with Linear Regression
+
+regressor.predict([[6.5]])
+
+## Predicting a new result with Polynomial Regression
+lin_reg_2.predict([[6.5]])
