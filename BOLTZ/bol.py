@@ -31,6 +31,16 @@ def convert(data):
     return new_data
 
 traning = convert(traning)
-test = convert(test)
+test    = convert(test)
 
-print(test)
+traning = torch.FloatTensor(traning)
+test    = torch.FloatTensor(test)
+
+traning[traning == 0 ] = -1
+traning[traning == 1 ] = 0
+traning[traning == 2 ] = 0
+traning[traning == 3]  = 1
+test[test == 0 ] = -1
+test[test == 1 ] = 0
+test[test == 2 ] = 0
+test[test == 3 ] = 1
