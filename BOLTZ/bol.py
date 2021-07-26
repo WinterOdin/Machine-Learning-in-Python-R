@@ -44,3 +44,15 @@ test[test == 0 ] = -1
 test[test == 1 ] = 0
 test[test == 2 ] = 0
 test[test == 3 ] = 1
+
+class RBM():
+    def __init__(self,nv,nh):
+        self.w = torch.randn(nh,nv)
+        self.a = torch.randn(1,nh)
+        self.b = torch.randn(1,nv)
+    def  sample_b(self, x):
+        vx = torch.mm(x, self.w.t())
+        activation = wx + self.a.expand_as(wx)
+        p_h_given_v = torch.sigmoid(activation)
+        return p_h_given_v, torch.bernoulli(p_h_given_v)
+        
